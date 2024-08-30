@@ -8,54 +8,117 @@
 import SwiftUI
 import SwiftData
 
+private enum SidebarItem: String, CaseIterable, Identifiable {
+    case pointOfSale = "Point Of Sale"
+    case supplier = "Supplier"
+    case product = "Product"
+    case bundling = "Bundling"
+    
+    var id: String { self.rawValue }
+}
+
+private func iconForItem(_ item: SidebarItem) -> String {
+    switch item {
+    case .supplier: "person.fill"
+    case .product: "takeoutbag.and.cup.and.straw.fill"
+    case .pointOfSale: "cart.fill"
+    case .bundling: "bag.fill"
+    }
+}
+
 struct ContentView: View {
-    @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
+    @State private var selectedSidebarItem: SidebarItem? = .supplier
+    @EnvironmentObject var router: Router
 
     var body: some View {
-        NavigationSplitView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
-                    } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
-                    }
-                }
-                .onDelete(perform: deleteItems)
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
-            }
+        NavigationSplitView(columnVisibility: $router.splitViewVisibility) {
+            sidebar
         } detail: {
-            Text("Select an item")
-        }
-    }
-
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
-        }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                modelContext.delete(items[index])
+            detailView
+        }.disabled(router.disableSideBar)
+            .onAppear{
+                router.splitViewVisibility = .detailOnly
             }
+    }
+    
+    var sidebar: some View {
+        List(SidebarItem.allCases, selection: $selectedSidebarItem) { item in
+            NavigationLink(value: item) {
+                Label(item.rawValue, systemImage: iconForItem(item))
+            }
+        }
+        .onChange(of: selectedSidebarItem){oldValue, newValue in
+            if oldValue == SidebarItem.supplier{
+                router.navigateToRoot(stackType: .supplier)
+            }else if oldValue == SidebarItem.product{
+                router.navigateToRoot(stackType: .product)
+            }else if oldValue == SidebarItem.pointOfSale{
+                router.navigateToRoot(stackType: .pointOfSale)
+            }else{
+                router.navigateToRoot(stackType: .bundling)
+            }
+        }
+        .navigationTitle("CPOS")
+    }
+    
+    @ViewBuilder
+    var detailView: some View {
+        switch selectedSidebarItem {
+        case .supplier:
+            NavigationStack(path: $router.supplyPath){
+                Text("Supplier List Page")
+                    .navigationDestination(for: Router.SupplierDestination.self){ destination in
+                        switch destination{
+                        case .supplierList :
+                            Text("Supplier List Page")
+                        }
+                    }
+            }
+        case .product:
+            NavigationStack(path: $router.productPath){
+                Text("Product List Page")
+                    .navigationDestination(for: Router.ProductDestination.self){ destination in
+                        switch destination{
+                        case .productList :
+                            Text("Product List Page")
+                        }
+                    }
+            }
+        case .pointOfSale:
+            NavigationStack(path: $router.pointOfSalePath){
+                Text("Point of Sale Page")
+                    .navigationDestination(for: Router.PointOfSaleDestination.self){ destination in
+                        switch destination{
+                        case .pointOfSale :
+                            Text("Supplier List Page")
+                        case .historicTransaction :
+                            Text("Historic Transaction Page")
+                        case .analyticsTransasction :
+                            Text("Analytics Transaction Page")
+                        }
+                    }
+            }
+                
+        case .bundling:
+            NavigationStack(path: $router.bundlingPath){
+                Text("Bundling Page")
+                    .navigationDestination(for: Router.BundlingDestination.self){ destination in
+                        switch destination{
+                        case .bundling :
+                            Text("Bundling Page")
+                        }
+                    }
+            }
+        case .none:
+            Text("None")
         }
     }
 }
 
-#Preview {
-    ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        // Initialize the Router as a StateObject and pass it to ContentView
+        ContentView()
+            .environmentObject(Router())
+    }
 }
