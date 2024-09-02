@@ -27,9 +27,9 @@ private func iconForItem(_ item: SidebarItem) -> String {
 }
 
 struct ContentView: View {
-    @State private var selectedSidebarItem: SidebarItem? = .supplier
+    @State private var selectedSidebarItem: SidebarItem? = .pointOfSale
     @EnvironmentObject var router: Router
-
+    
     var body: some View {
         NavigationSplitView(columnVisibility: $router.splitViewVisibility) {
             sidebar
@@ -66,31 +66,31 @@ struct ContentView: View {
         switch selectedSidebarItem {
         case .supplier:
             NavigationStack(path: $router.supplyPath){
-                Text("Supplier List Page")
+                SupplierListView()
                     .navigationDestination(for: Router.SupplierDestination.self){ destination in
                         switch destination{
                         case .supplierList :
-                            Text("Supplier List Page")
+                            SupplierListView()
                         }
                     }
             }
         case .product:
             NavigationStack(path: $router.productPath){
-                Text("Product List Page")
+                ProductListView()
                     .navigationDestination(for: Router.ProductDestination.self){ destination in
                         switch destination{
                         case .productList :
-                            Text("Product List Page")
+                            ProductListView()
                         }
                     }
             }
         case .pointOfSale:
             NavigationStack(path: $router.pointOfSalePath){
-                Text("Point of Sale Page")
+                PointOfSaleView()
                     .navigationDestination(for: Router.PointOfSaleDestination.self){ destination in
                         switch destination{
                         case .pointOfSale :
-                            Text("Supplier List Page")
+                            PointOfSaleView()
                         case .historicTransaction :
                             Text("Historic Transaction Page")
                         case .analyticsTransasction :
@@ -98,7 +98,7 @@ struct ContentView: View {
                         }
                     }
             }
-                
+            
         case .bundling:
             NavigationStack(path: $router.bundlingPath){
                 Text("Bundling Page")

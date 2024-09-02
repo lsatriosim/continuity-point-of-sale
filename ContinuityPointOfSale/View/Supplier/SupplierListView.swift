@@ -13,6 +13,7 @@ struct SupplierListView: View {
     @Query private var supplierFromSwiftData: [Supplier]
     @State private var addModalPresented : Bool = false
     @EnvironmentObject var router: Router
+    @Environment(\.modelContext) private var modelContext
     
     var filteredSupplier: [Supplier] {
         if searchText.isEmpty {
@@ -43,6 +44,8 @@ struct SupplierListView: View {
                         ForEach(filteredSupplier, id: \.self){ supplier in
                             Button(action: {
                                 //add supplier into router if need detail
+                                router.supplierChosen = supplier
+                                addModalPresented = true
                             }, label: {
                                 HStack{
                                     Text(supplier.name)
@@ -51,9 +54,11 @@ struct SupplierListView: View {
                                 }
                             })
                         }
-                    }
+                        .onDelete(perform: delete)
+                    }.foregroundStyle(.black)
                 }
             }
+            .background(.surface)
             .scrollContentBackground(.hidden)
             .navigationTitle("Supplier List")
             .searchable(
@@ -72,16 +77,41 @@ struct SupplierListView: View {
         }
         .sheet(isPresented: $addModalPresented){
             //addModalView
+            AddSupplierModal(isPresented: $addModalPresented)
         }
         .onAppear{
             //add supplier into router if need detail
+            router.supplierChosen = nil
         }
         .navigationBarBackButtonHidden()
+    }
+    
+    func delete(_ offsets: IndexSet) {
+        // delete the objects here
+        for index in offsets {
+            let supplier = supplierFromSwiftData[index]
+            supplier.delete(context: modelContext)
+        }
     }
 }
 
 #Preview {
-    NavigationStack{
-        SupplierListView()
+    do {
+        let config = ModelConfiguration(isStoredInMemoryOnly: true)
+        let container = try ModelContainer(for: Supplier.self, Product.self, configurations: config)
+        
+        return tempView()
+            .modelContainer(container)
+    } catch {
+        fatalError("Failed to create model container: \(error.localizedDescription)")
     }
+    
+    struct tempView: View {
+        var body: some View {
+            NavigationStack{
+                SupplierListView()
+            }
+        }
+    }
+    return tempView()
 }

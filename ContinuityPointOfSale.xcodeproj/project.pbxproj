@@ -10,6 +10,18 @@
 		DE7B20002C81BF8D00290179 /* SupplierListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7B1FFF2C81BF8D00290179 /* SupplierListView.swift */; };
 		DE7B20022C81BFB000290179 /* Supplier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7B20012C81BFB000290179 /* Supplier.swift */; };
 		DE7B20052C81C03100290179 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7B20042C81C03100290179 /* Product.swift */; };
+		DE7B20072C81CDB700290179 /* AddSupplierModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7B20062C81CDB700290179 /* AddSupplierModal.swift */; };
+		DE7B200C2C81E01100290179 /* ProductListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7B200B2C81E01100290179 /* ProductListView.swift */; };
+		DE7B200E2C81E10C00290179 /* AddProductModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7B200D2C81E10C00290179 /* AddProductModal.swift */; };
+		DE7B20102C8224BA00290179 /* ProductCardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7B200F2C8224BA00290179 /* ProductCardComponent.swift */; };
+		DE7B20132C84BCBF00290179 /* PointOfSaleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7B20122C84BCBF00290179 /* PointOfSaleView.swift */; };
+		DE7B20152C84BEE000290179 /* ToolbarComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7B20142C84BEE000290179 /* ToolbarComponent.swift */; };
+		DE7B20172C8546EF00290179 /* MenuCardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7B20162C8546EF00290179 /* MenuCardComponent.swift */; };
+		DE7B20192C8594E900290179 /* MenuListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7B20182C8594E900290179 /* MenuListView.swift */; };
+		DE7B201B2C85F47100290179 /* OrderItemsComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7B201A2C85F47100290179 /* OrderItemsComponent.swift */; };
+		DE7B201D2C85F66C00290179 /* OrderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7B201C2C85F66C00290179 /* OrderItem.swift */; };
+		DE7B201F2C85F67E00290179 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7B201E2C85F67E00290179 /* Order.swift */; };
+		DE7B20212C85F9B500290179 /* CurrentOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7B20202C85F9B500290179 /* CurrentOrderView.swift */; };
 		DEB5C1332C81AB410096C8E7 /* ContinuityPointOfSaleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB5C1322C81AB410096C8E7 /* ContinuityPointOfSaleApp.swift */; };
 		DEB5C1352C81AB410096C8E7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB5C1342C81AB410096C8E7 /* ContentView.swift */; };
 		DEB5C1372C81AB410096C8E7 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB5C1362C81AB410096C8E7 /* Item.swift */; };
@@ -22,6 +34,18 @@
 		DE7B1FFF2C81BF8D00290179 /* SupplierListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplierListView.swift; sourceTree = "<group>"; };
 		DE7B20012C81BFB000290179 /* Supplier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Supplier.swift; sourceTree = "<group>"; };
 		DE7B20042C81C03100290179 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		DE7B20062C81CDB700290179 /* AddSupplierModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSupplierModal.swift; sourceTree = "<group>"; };
+		DE7B200B2C81E01100290179 /* ProductListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListView.swift; sourceTree = "<group>"; };
+		DE7B200D2C81E10C00290179 /* AddProductModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductModal.swift; sourceTree = "<group>"; };
+		DE7B200F2C8224BA00290179 /* ProductCardComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCardComponent.swift; sourceTree = "<group>"; };
+		DE7B20122C84BCBF00290179 /* PointOfSaleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointOfSaleView.swift; sourceTree = "<group>"; };
+		DE7B20142C84BEE000290179 /* ToolbarComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarComponent.swift; sourceTree = "<group>"; };
+		DE7B20162C8546EF00290179 /* MenuCardComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCardComponent.swift; sourceTree = "<group>"; };
+		DE7B20182C8594E900290179 /* MenuListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuListView.swift; sourceTree = "<group>"; };
+		DE7B201A2C85F47100290179 /* OrderItemsComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderItemsComponent.swift; sourceTree = "<group>"; };
+		DE7B201C2C85F66C00290179 /* OrderItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderItem.swift; sourceTree = "<group>"; };
+		DE7B201E2C85F67E00290179 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		DE7B20202C85F9B500290179 /* CurrentOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentOrderView.swift; sourceTree = "<group>"; };
 		DEB5C12F2C81AB410096C8E7 /* ContinuityPointOfSale.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContinuityPointOfSale.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEB5C1322C81AB410096C8E7 /* ContinuityPointOfSaleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinuityPointOfSaleApp.swift; sourceTree = "<group>"; };
 		DEB5C1342C81AB410096C8E7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -47,8 +71,52 @@
 			children = (
 				DE7B20012C81BFB000290179 /* Supplier.swift */,
 				DE7B20042C81C03100290179 /* Product.swift */,
+				DE7B201C2C85F66C00290179 /* OrderItem.swift */,
+				DE7B201E2C85F67E00290179 /* Order.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		DE7B20082C81DFE900290179 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DE7B20112C84BCAE00290179 /* PointOfSale */,
+				DE7B200A2C81E00400290179 /* Product */,
+				DE7B20092C81DFF500290179 /* Supplier */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DE7B20092C81DFF500290179 /* Supplier */ = {
+			isa = PBXGroup;
+			children = (
+				DE7B1FFF2C81BF8D00290179 /* SupplierListView.swift */,
+				DE7B20062C81CDB700290179 /* AddSupplierModal.swift */,
+			);
+			path = Supplier;
+			sourceTree = "<group>";
+		};
+		DE7B200A2C81E00400290179 /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				DE7B200B2C81E01100290179 /* ProductListView.swift */,
+				DE7B200D2C81E10C00290179 /* AddProductModal.swift */,
+				DE7B200F2C8224BA00290179 /* ProductCardComponent.swift */,
+			);
+			path = Product;
+			sourceTree = "<group>";
+		};
+		DE7B20112C84BCAE00290179 /* PointOfSale */ = {
+			isa = PBXGroup;
+			children = (
+				DE7B20122C84BCBF00290179 /* PointOfSaleView.swift */,
+				DE7B20142C84BEE000290179 /* ToolbarComponent.swift */,
+				DE7B20162C8546EF00290179 /* MenuCardComponent.swift */,
+				DE7B20182C8594E900290179 /* MenuListView.swift */,
+				DE7B201A2C85F47100290179 /* OrderItemsComponent.swift */,
+				DE7B20202C85F9B500290179 /* CurrentOrderView.swift */,
+			);
+			path = PointOfSale;
 			sourceTree = "<group>";
 		};
 		DEB5C1262C81AB410096C8E7 = {
@@ -70,6 +138,7 @@
 		DEB5C1312C81AB410096C8E7 /* ContinuityPointOfSale */ = {
 			isa = PBXGroup;
 			children = (
+				DE7B20082C81DFE900290179 /* View */,
 				DE7B20032C81BFC700290179 /* Model */,
 				DEB5C1322C81AB410096C8E7 /* ContinuityPointOfSaleApp.swift */,
 				DEB5C1342C81AB410096C8E7 /* ContentView.swift */,
@@ -77,7 +146,6 @@
 				DEB5C1382C81AB430096C8E7 /* Assets.xcassets */,
 				DEB5C13A2C81AB430096C8E7 /* Preview Content */,
 				DEB5C1422C81AD340096C8E7 /* Router.swift */,
-				DE7B1FFF2C81BF8D00290179 /* SupplierListView.swift */,
 			);
 			path = ContinuityPointOfSale;
 			sourceTree = "<group>";
@@ -161,12 +229,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEB5C1432C81AD340096C8E7 /* Router.swift in Sources */,
+				DE7B200E2C81E10C00290179 /* AddProductModal.swift in Sources */,
 				DE7B20022C81BFB000290179 /* Supplier.swift in Sources */,
 				DE7B20002C81BF8D00290179 /* SupplierListView.swift in Sources */,
+				DE7B20172C8546EF00290179 /* MenuCardComponent.swift in Sources */,
+				DE7B201B2C85F47100290179 /* OrderItemsComponent.swift in Sources */,
+				DE7B20072C81CDB700290179 /* AddSupplierModal.swift in Sources */,
+				DE7B20192C8594E900290179 /* MenuListView.swift in Sources */,
+				DE7B20212C85F9B500290179 /* CurrentOrderView.swift in Sources */,
 				DEB5C1352C81AB410096C8E7 /* ContentView.swift in Sources */,
 				DEB5C1372C81AB410096C8E7 /* Item.swift in Sources */,
+				DE7B20102C8224BA00290179 /* ProductCardComponent.swift in Sources */,
+				DE7B200C2C81E01100290179 /* ProductListView.swift in Sources */,
+				DE7B201F2C85F67E00290179 /* Order.swift in Sources */,
+				DE7B20132C84BCBF00290179 /* PointOfSaleView.swift in Sources */,
 				DEB5C1332C81AB410096C8E7 /* ContinuityPointOfSaleApp.swift in Sources */,
+				DE7B20152C84BEE000290179 /* ToolbarComponent.swift in Sources */,
 				DE7B20052C81C03100290179 /* Product.swift in Sources */,
+				DE7B201D2C85F66C00290179 /* OrderItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,6 +11,8 @@ import SwiftUI
 final class Router: ObservableObject{
     @Published var splitViewVisibility = NavigationSplitViewVisibility.all
     @Published var disableSideBar : Bool = false
+    @Published var supplierChosen: Supplier? = nil
+    @Published var productChosen: Product? = nil
     
     public enum StackType: Codable, Hashable{
         case supplier

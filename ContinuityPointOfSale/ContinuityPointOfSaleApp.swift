@@ -11,10 +11,12 @@ import SwiftData
 @main
 struct ContinuityPointOfSaleApp: App {
     @StateObject var router: Router = Router()
+    @StateObject var order: Order = Order()
     
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Item.self,
+            Supplier.self,
+            Product.self
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
@@ -30,6 +32,7 @@ struct ContinuityPointOfSaleApp: App {
             ContentView()
         }
         .environmentObject(router)
+        .environmentObject(order)
         .modelContainer(sharedModelContainer)
     }
 }

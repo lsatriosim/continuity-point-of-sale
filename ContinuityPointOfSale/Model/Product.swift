@@ -14,12 +14,19 @@ final class Product {
     var name: String
     var price: Int
     
+    @Relationship(inverse: \Supplier.products)
     var supplier: Supplier?
     
-    init(id: UUID, name: String, price: Int, supplier: Supplier?) {
+    var image: Data? = nil
+    
+    var unit: String
+    
+    init(id: UUID, name: String, price: Int, supplier: Supplier?, image: Data?, unit: String) {
         self.id = id
         self.name = name
         self.price = price
+        self.image = image
+        self.unit = unit
         
         if let supplier = supplier{
             self.supplier = supplier
