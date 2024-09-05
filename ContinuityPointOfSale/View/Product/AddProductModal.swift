@@ -43,7 +43,7 @@ struct AddProductModal: View {
                             .keyboardType(.numberPad) // Show number pad keyboard
                             .onChange(of: productPrice) { oldValue, newValue in
                                 // Remove non-digit characters
-                                productPrice = formatToRupiah(input: newValue)
+                                productPrice = StringFormatter.formatToRupiah(input: newValue)
                             }
                             .textFieldStyle(.roundedBorder)
                             .padding(.horizontal, 12)
@@ -134,28 +134,6 @@ struct AddProductModal: View {
             }
         }
     }
-    
-    private func formatToRupiah(input: String) -> String {
-            // Remove non-digit characters
-            let numericString = input.filter { $0.isNumber }
-            
-            // Convert string to number
-            guard let number = Int(numericString) else {
-                return ""
-            }
-            
-            // Format number to Rupiah currency
-            let formatter = NumberFormatter()
-            formatter.numberStyle = .currency
-            formatter.currencySymbol = "Rp "
-            formatter.maximumFractionDigits = 0
-            
-            if let formattedString = formatter.string(from: NSNumber(value: number)) {
-                return formattedString
-            } else {
-                return ""
-            }
-        }
     
     private func saveData(){
         if(router.productChosen == nil){

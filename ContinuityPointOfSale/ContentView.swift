@@ -92,9 +92,9 @@ struct ContentView: View {
                         case .pointOfSale :
                             PointOfSaleView()
                         case .historicTransaction :
-                            Text("Historic Transaction Page")
+                            TransactionHistoryView()
                         case .analyticsTransasction :
-                            Text("Analytics Transaction Page")
+                            AnalyticsView()
                         }
                     }
             }

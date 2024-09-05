@@ -6,10 +6,14 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct CurrentOrderView: View {
     var proxy: GeometryProxy
     @EnvironmentObject var order: Order
+    @Environment(\.modelContext) var modelContext: ModelContext
+    var payBill : () -> Void
+    
     var body: some View {
         VStack{
             Text("Current Order").font(.title2).bold()
@@ -26,28 +30,23 @@ struct CurrentOrderView: View {
                 Spacer()
                 Text("\(order.totalPrice)").font(.headline).bold()
             }
-            Button(action: {}, label: {
-                ZStack{
-                    RoundedRectangle(cornerSize: CGSize(width: 10, height: 10))
-                        .fill(.accent)
-                        .frame(width: proxy.size.width * 0.2, height: proxy.size.height * 0.06)
-                        .overlay(
-                                    RoundedRectangle(cornerSize: CGSize(width: 7, height: 7))
-                                        .stroke(.red, lineWidth: 1)
-                                )
-                    
-                    Text("Print Bill")
-                        .font(.body)
-                        .bold()
-                        .foregroundStyle(.white)
-                }
+            Button(action: payBill, label: {
+                Text("Pay Bill")
+                    .frame(width: proxy.size.width * 0.2, height: proxy.size.height * 0.06)
+                    .foregroundColor(.white)
+                    .background(order.items.count == 0 ? .gray : .accent)
+                    .font(.body)
+                    .bold()
+                    .cornerRadius(12)
+                    .padding()
             })
+            .disabled(order.items.count == 0)
         }
     }
 }
 
 #Preview {
     GeometryReader{ proxy in
-        CurrentOrderView(proxy: proxy)
+        CurrentOrderView(proxy: proxy, payBill: {})
     }
 }

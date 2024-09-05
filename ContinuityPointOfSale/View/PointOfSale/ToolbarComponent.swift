@@ -81,7 +81,7 @@ struct ToolbarComponent: View {
                 }
             })
             .padding(.vertical, 12)
-        }.frame(width: .infinity, height: .infinity)
+        }.frame(width: proxy.size.width, height: proxy.size.height)
             .padding(.horizontal, 24)
     }
 }

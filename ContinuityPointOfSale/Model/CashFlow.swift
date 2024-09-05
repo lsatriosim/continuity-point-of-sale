@@ -1,31 +1,24 @@
 //
-//  Supplier.swift
+//  CashFlow.swift
 //  ContinuityPointOfSale
 //
-//  Created by Liefran Satrio Sim on 30/08/24.
+//  Created by Liefran Satrio Sim on 04/09/24.
 //
 
 import Foundation
 import SwiftData
 
 @Model
-final class Supplier {
+final class CashFlow {
     @Attribute(.unique) var id: UUID
-    var name: String
+    var walletName: String
+    var cashValue: Int
     
-    var products = [Product]()
-    @Relationship(deleteRule: .cascade, inverse: \Product.supplier)
-    
-    init(id: UUID, name: String) {
+    init(id: UUID, walletName: String, cashValue: Int) {
         self.id = id
-        self.name = name
+        self.walletName = walletName
+        self.cashValue = cashValue
     }
-    
-    func totalRevenue(orderItems: [PersistentOrderItem]) -> Int {
-        return orderItems
-                .filter { $0.supplierName == self.name }
-                .reduce(0) { $0 + ($1.productPrice * $1.quantity) }
-        }
     
     func save(context: ModelContext) {
         context.insert(self)

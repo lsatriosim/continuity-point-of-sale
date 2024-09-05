@@ -11,6 +11,7 @@ struct OrderItemsComponent: View {
     var proxy: GeometryProxy
     @ObservedObject var orderItem: OrderItem
     @EnvironmentObject var order: Order
+    
     var body: some View {
         HStack{
             if(orderItem.product.image == nil){
@@ -30,7 +31,7 @@ struct OrderItemsComponent: View {
                     .padding(20)
             }
             VStack(alignment: .leading, spacing: 4){
-                Text("\(orderItem.product.name)").font(.headline).bold()
+                Text("\(orderItem.product.name)").font(.headline).bold().truncationMode(.tail)
                 HStack(alignment: .top){
                     Text("Rp \(orderItem.product.price)").font(.body)
                     Text("/ \(orderItem.product.unit)").font(.body)

@@ -29,8 +29,6 @@ struct ProductListView: View {
         GeometryReader { geometry in
             HStack{
                 VStack {
-                    Text("Hai")
-                    
                     if filteredProduct.isEmpty{
                         //no data view
                         HStack(alignment: .center){
@@ -110,6 +108,7 @@ struct ProductListView: View {
         var body: some View {
             NavigationStack{
                 ProductListView()
+                    .environmentObject(Router())
             }
         }
     }

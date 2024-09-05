@@ -22,6 +22,16 @@
 		DE7B201D2C85F66C00290179 /* OrderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7B201C2C85F66C00290179 /* OrderItem.swift */; };
 		DE7B201F2C85F67E00290179 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7B201E2C85F67E00290179 /* Order.swift */; };
 		DE7B20212C85F9B500290179 /* CurrentOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7B20202C85F9B500290179 /* CurrentOrderView.swift */; };
+		DE7B20232C869A4C00290179 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7B20222C869A4C00290179 /* Transaction.swift */; };
+		DE7B20262C869D0300290179 /* TransactionHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7B20252C869D0300290179 /* TransactionHistoryView.swift */; };
+		DE7B20282C86EB3300290179 /* PersistentOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7B20272C86EB3300290179 /* PersistentOrder.swift */; };
+		DE7B202A2C86EB7200290179 /* PersistentOrderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7B20292C86EB7200290179 /* PersistentOrderItem.swift */; };
+		DE7B202D2C86EBD300290179 /* Order + PersistentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7B202C2C86EBD300290179 /* Order + PersistentData.swift */; };
+		DE7B20302C8756BB00290179 /* AnalyticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7B202F2C8756BB00290179 /* AnalyticsView.swift */; };
+		DE7B20322C87EA1900290179 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7B20312C87EA1900290179 /* Wallet.swift */; };
+		DE7B20342C883EA100290179 /* CashFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7B20332C883EA100290179 /* CashFlow.swift */; };
+		DE7B20362C89DEE400290179 /* Seeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7B20352C89DEE400290179 /* Seeder.swift */; };
+		DE7B20382C89E01900290179 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7B20372C89E01900290179 /* Formatter.swift */; };
 		DEB5C1332C81AB410096C8E7 /* ContinuityPointOfSaleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB5C1322C81AB410096C8E7 /* ContinuityPointOfSaleApp.swift */; };
 		DEB5C1352C81AB410096C8E7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB5C1342C81AB410096C8E7 /* ContentView.swift */; };
 		DEB5C1372C81AB410096C8E7 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB5C1362C81AB410096C8E7 /* Item.swift */; };
@@ -46,6 +56,16 @@
 		DE7B201C2C85F66C00290179 /* OrderItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderItem.swift; sourceTree = "<group>"; };
 		DE7B201E2C85F67E00290179 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		DE7B20202C85F9B500290179 /* CurrentOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentOrderView.swift; sourceTree = "<group>"; };
+		DE7B20222C869A4C00290179 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		DE7B20252C869D0300290179 /* TransactionHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistoryView.swift; sourceTree = "<group>"; };
+		DE7B20272C86EB3300290179 /* PersistentOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentOrder.swift; sourceTree = "<group>"; };
+		DE7B20292C86EB7200290179 /* PersistentOrderItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentOrderItem.swift; sourceTree = "<group>"; };
+		DE7B202C2C86EBD300290179 /* Order + PersistentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Order + PersistentData.swift"; sourceTree = "<group>"; };
+		DE7B202F2C8756BB00290179 /* AnalyticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsView.swift; sourceTree = "<group>"; };
+		DE7B20312C87EA1900290179 /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
+		DE7B20332C883EA100290179 /* CashFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashFlow.swift; sourceTree = "<group>"; };
+		DE7B20352C89DEE400290179 /* Seeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seeder.swift; sourceTree = "<group>"; };
+		DE7B20372C89E01900290179 /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 		DEB5C12F2C81AB410096C8E7 /* ContinuityPointOfSale.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContinuityPointOfSale.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEB5C1322C81AB410096C8E7 /* ContinuityPointOfSaleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinuityPointOfSaleApp.swift; sourceTree = "<group>"; };
 		DEB5C1342C81AB410096C8E7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -69,10 +89,16 @@
 		DE7B20032C81BFC700290179 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DE7B202B2C86EBB600290179 /* Util */,
 				DE7B20012C81BFB000290179 /* Supplier.swift */,
 				DE7B20042C81C03100290179 /* Product.swift */,
 				DE7B201C2C85F66C00290179 /* OrderItem.swift */,
 				DE7B201E2C85F67E00290179 /* Order.swift */,
+				DE7B20222C869A4C00290179 /* Transaction.swift */,
+				DE7B20272C86EB3300290179 /* PersistentOrder.swift */,
+				DE7B20292C86EB7200290179 /* PersistentOrderItem.swift */,
+				DE7B20312C87EA1900290179 /* Wallet.swift */,
+				DE7B20332C883EA100290179 /* CashFlow.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -109,6 +135,8 @@
 		DE7B20112C84BCAE00290179 /* PointOfSale */ = {
 			isa = PBXGroup;
 			children = (
+				DE7B202E2C8756AC00290179 /* Analytics */,
+				DE7B20242C869CF300290179 /* History */,
 				DE7B20122C84BCBF00290179 /* PointOfSaleView.swift */,
 				DE7B20142C84BEE000290179 /* ToolbarComponent.swift */,
 				DE7B20162C8546EF00290179 /* MenuCardComponent.swift */,
@@ -117,6 +145,32 @@
 				DE7B20202C85F9B500290179 /* CurrentOrderView.swift */,
 			);
 			path = PointOfSale;
+			sourceTree = "<group>";
+		};
+		DE7B20242C869CF300290179 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				DE7B20252C869D0300290179 /* TransactionHistoryView.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		DE7B202B2C86EBB600290179 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				DE7B202C2C86EBD300290179 /* Order + PersistentData.swift */,
+				DE7B20352C89DEE400290179 /* Seeder.swift */,
+				DE7B20372C89E01900290179 /* Formatter.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		DE7B202E2C8756AC00290179 /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				DE7B202F2C8756BB00290179 /* AnalyticsView.swift */,
+			);
+			path = Analytics;
 			sourceTree = "<group>";
 		};
 		DEB5C1262C81AB410096C8E7 = {
@@ -228,20 +282,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE7B20322C87EA1900290179 /* Wallet.swift in Sources */,
 				DEB5C1432C81AD340096C8E7 /* Router.swift in Sources */,
+				DE7B202A2C86EB7200290179 /* PersistentOrderItem.swift in Sources */,
 				DE7B200E2C81E10C00290179 /* AddProductModal.swift in Sources */,
 				DE7B20022C81BFB000290179 /* Supplier.swift in Sources */,
+				DE7B20282C86EB3300290179 /* PersistentOrder.swift in Sources */,
 				DE7B20002C81BF8D00290179 /* SupplierListView.swift in Sources */,
 				DE7B20172C8546EF00290179 /* MenuCardComponent.swift in Sources */,
 				DE7B201B2C85F47100290179 /* OrderItemsComponent.swift in Sources */,
 				DE7B20072C81CDB700290179 /* AddSupplierModal.swift in Sources */,
+				DE7B20262C869D0300290179 /* TransactionHistoryView.swift in Sources */,
+				DE7B20382C89E01900290179 /* Formatter.swift in Sources */,
+				DE7B20362C89DEE400290179 /* Seeder.swift in Sources */,
 				DE7B20192C8594E900290179 /* MenuListView.swift in Sources */,
 				DE7B20212C85F9B500290179 /* CurrentOrderView.swift in Sources */,
 				DEB5C1352C81AB410096C8E7 /* ContentView.swift in Sources */,
+				DE7B20342C883EA100290179 /* CashFlow.swift in Sources */,
+				DE7B20302C8756BB00290179 /* AnalyticsView.swift in Sources */,
 				DEB5C1372C81AB410096C8E7 /* Item.swift in Sources */,
 				DE7B20102C8224BA00290179 /* ProductCardComponent.swift in Sources */,
 				DE7B200C2C81E01100290179 /* ProductListView.swift in Sources */,
 				DE7B201F2C85F67E00290179 /* Order.swift in Sources */,
+				DE7B202D2C86EBD300290179 /* Order + PersistentData.swift in Sources */,
+				DE7B20232C869A4C00290179 /* Transaction.swift in Sources */,
 				DE7B20132C84BCBF00290179 /* PointOfSaleView.swift in Sources */,
 				DEB5C1332C81AB410096C8E7 /* ContinuityPointOfSaleApp.swift in Sources */,
 				DE7B20152C84BEE000290179 /* ToolbarComponent.swift in Sources */,
@@ -387,7 +451,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationLandscapeLeft;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationLandscapeRight;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -420,7 +484,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationLandscapeLeft;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationLandscapeRight;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

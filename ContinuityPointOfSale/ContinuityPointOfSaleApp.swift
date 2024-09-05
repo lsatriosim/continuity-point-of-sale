@@ -16,7 +16,11 @@ struct ContinuityPointOfSaleApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             Supplier.self,
-            Product.self
+            Product.self,
+            Transaction.self,
+            PersistentOrder.self,
+            PersistentOrderItem.self,
+            Wallet.self
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
