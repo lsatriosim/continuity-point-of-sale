@@ -63,12 +63,68 @@ struct TransactionHistoryView: View {
             .background(.surface)
             .scrollContentBackground(.hidden)
             .navigationTitle("Transaction History")
+            .toolbar{
+                ToolbarItem(placement: .topBarTrailing){
+                    ShareLink(item:generateCSV()) {
+                                    Text("Export CSV")
+                                }
+                }
+            }
         }
         .searchable(text: $searchKeyword, placement: .navigationBarDrawer(displayMode: .always), prompt: Text("Search customer name..."))
         .onAppear{
             router.transactionChosen = nil
         }
     }
+    
+    func generateCSV() -> URL {
+        var fileURL: URL!
+        
+        // Define the CSV heading
+        let heading = "Timestamp, ID, Customer Name, Product Name, Quantity, Price, Total Price\n"
+        
+        // Initialize an array to hold each row of the CSV
+        var rows: [String] = []
+        
+        // Iterate through all transactions
+        for transaction in transactions {
+            let customerName = transaction.customerName
+            let timeStamp = transaction.timeStamp
+            let orderItems = transaction.order?.items ?? []
+            
+            // Iterate through each order item in the transaction
+            for item in orderItems {
+                let productName = item.productName
+                let quantity = item.quantity
+                let productPrice = item.productPrice
+                let totalPrice = productPrice * quantity
+                
+                // Create a row for each order item in the format of the CSV
+                let row = "\(timeStamp), \(transaction.id),\(customerName), \(productName), \(quantity), \(productPrice), \(totalPrice)"
+                rows.append(row)
+            }
+        }
+        
+        // Combine the heading with all the rows
+        let stringData = heading + rows.joined(separator: "\n")
+        
+        do {
+            // Create the path for the file in the document directory
+            let path = try FileManager.default.url(for: .documentDirectory, in: .allDomainsMask, appropriateFor: nil, create: false)
+            
+            fileURL = path.appendingPathComponent("Transaction-Data.csv")
+            
+            // Write the CSV data to the file
+            try stringData.write(to: fileURL, atomically: true, encoding: .utf8)
+            print("CSV file created at: \(fileURL!)")
+            
+        } catch {
+            print("Error generating CSV file: \(error)")
+        }
+        
+        return fileURL
+    }
+
 }
 
 #Preview{
