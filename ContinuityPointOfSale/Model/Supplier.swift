@@ -27,6 +27,10 @@ final class Supplier {
                 .reduce(0) { $0 + ($1.productPrice * $1.quantity) }
         }
     
+    func productSell(orderItems: [PersistentOrderItem]) -> [PersistentOrderItem]{
+        return orderItems.filter{ $0.supplierName == self.name }
+    }
+    
     func save(context: ModelContext) {
         context.insert(self)
         do {

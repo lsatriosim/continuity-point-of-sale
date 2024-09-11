@@ -13,6 +13,7 @@ struct AnalyticsView: View {
     @Query var orderItems: [PersistentOrderItem]
     @Query var wallets: [Wallet]
     @Query var cashFlows: [CashFlow]
+    @EnvironmentObject var router: Router
 
     var body: some View {
         VStack{
@@ -23,10 +24,15 @@ struct AnalyticsView: View {
                 }
                 List{
                     ForEach(suppliers, id: \.id){ supplier in
-                        HStack{
-                            Text(supplier.name)
-                            Spacer()
-                            Text("\(supplier.totalRevenue(orderItems: orderItems))")
+                        Button(action: {
+                            router.supplierAnalyticsChosen = supplier
+                            router.navigate(to: .supplierAnalytics)
+                        }){
+                            HStack{
+                                Text(supplier.name)
+                                Spacer()
+                                Text("\(supplier.totalRevenue(orderItems: orderItems))")
+                            }
                         }
                     }
                 }.listStyle(.plain)

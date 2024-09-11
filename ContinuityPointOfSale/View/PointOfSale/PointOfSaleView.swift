@@ -56,13 +56,37 @@ struct PointOfSaleView: View {
                         }
                         Text("Total Balanced: Rp \(order.totalPrice)")
                         
-                        Toggle("Use Coupon? ", isOn: $useCoupon)
+                        Toggle("Use Coupon? ", isOn: $useCoupon).disabled(order.totalPrice < 30000).onChange(of: useCoupon){(oldValue, newValue) in
+                            if(newValue == true){
+                                couponAmount = order.totalPrice / 30000
+                                cashFlows.first?.cashValue = couponAmount * 30000
+                                if(firstWalletName != "None"){
+                                    firstWalletBalance = order.totalPrice - (cashFlows.first?.cashValue ?? 0)
+                                    secondWalletBalance = 0
+                                }else if(secondWalletName != "None"){
+                                    secondWalletBalance = order.totalPrice - (cashFlows.first?.cashValue ?? 0)
+                                    firstWalletBalance = 0
+                                }
+                            }else{
+                                couponAmount = 0
+                                cashFlows.first?.cashValue = 0
+                                
+                                if(firstWalletName != "None"){
+                                    firstWalletBalance = order.totalPrice
+                                    secondWalletBalance = 0
+                                }else if(secondWalletName != "None"){
+                                    secondWalletBalance = order.totalPrice
+                                    firstWalletBalance = 0
+                                }
+                            }
+                            updateUndistributedBalance()
+                        }
                          
                         Text("Payment Method")
                         if(useCoupon){
                             HStack(alignment: .center){
                                 Image("coupon").resizable().frame(width: 80, height: 80).aspectRatio(contentMode: .fill)
-                                Stepper("", value: $couponAmount, in: 0...100)
+                                Stepper("", value: $couponAmount, in: 1...100)
                                     .onChange(of: couponAmount){oldValue, newValue in
                                         cashFlows.first?.cashValue = newValue * 30000
                                         updateUndistributedBalance()
@@ -75,13 +99,17 @@ struct PointOfSaleView: View {
                             Picker("", selection: $firstWalletName) {
                                 Text("None").tag("None")
                                 ForEach(walletOption, id: \.self) { wallet in
-                                    if(wallet.walletName != "Coupon"){
+                                    if(wallet.walletName != "Coupon" && wallet.walletName != secondWalletName){
                                         Text(wallet.walletName).tag(wallet.walletName)
                                     }
                                 }
                                 .onChange(of: firstWalletName){ oldValue, newValue in
                                     if(firstWalletName == "None"){
                                         firstWalletBalance = 0
+                                        updateUndistributedBalance()
+                                    }
+                                    else{
+                                        firstWalletBalance = calculateRestMoney(changeWallet: "firstWallet")
                                         updateUndistributedBalance()
                                     }
                                 }
@@ -100,13 +128,16 @@ struct PointOfSaleView: View {
                             Picker("", selection: $secondWalletName) {
                                 Text("None").tag("None")
                                 ForEach(walletOption, id: \.self) { wallet in
-                                    if(wallet.walletName != "Coupon"){
+                                    if(wallet.walletName != "Coupon" && wallet.walletName != firstWalletName){
                                         Text(wallet.walletName).tag(wallet.walletName)
                                     }
                                 }
                             }.onChange(of: secondWalletName){ oldValue, newValue in
                                 if(secondWalletName == "None"){
                                     secondWalletBalance = 0
+                                    updateUndistributedBalance()
+                                }else{
+                                    secondWalletBalance = calculateRestMoney(changeWallet: "secondWallet")
                                     updateUndistributedBalance()
                                 }
                             }
@@ -146,6 +177,14 @@ struct PointOfSaleView: View {
                             cashFlows = [CashFlow]()
                             customerName = ""
                             showPayBillModal = false
+                            firstWalletName = "None"
+                            secondWalletName = "None"
+                            firstWalletBalance = 0
+                            secondWalletBalance = 0
+                            useCoupon = false
+                            couponAmount = 0
+                            cashFlows.first?.cashValue = couponAmount * 30000
+                            updateUndistributedBalance()
                         }
                     }
                 }
@@ -154,9 +193,15 @@ struct PointOfSaleView: View {
                         let coupon = CashFlow(id: UUID(), walletName:"Coupon", cashValue: 0)
                         cashFlows.append(coupon)
                     }
+                    firstWalletName = "None"
+                    secondWalletName = "None"
+                    firstWalletBalance = 0
+                    secondWalletBalance = 0
+                    useCoupon = false
+                    couponAmount = 0
+                    cashFlows.first?.cashValue = couponAmount * 30000
                     updateUndistributedBalance()
                 }
-                
                 .sheet(isPresented: $showAddWalletModal){
                     NavigationStack{
                         Form{
@@ -200,6 +245,14 @@ struct PointOfSaleView: View {
             }
         }
         
+    }
+    
+    private func calculateRestMoney(changeWallet: String) -> Int{
+        if(changeWallet == "firstWallet"){
+            return order.totalPrice - (secondWalletBalance + (cashFlows.first?.cashValue ?? 0))
+        }else{
+            return order.totalPrice - (firstWalletBalance + (cashFlows.first?.cashValue ?? 0))
+        }
     }
     
     private func resetOrder(){

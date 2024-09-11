@@ -13,6 +13,7 @@ final class Router: ObservableObject{
     @Published var disableSideBar : Bool = false
     @Published var supplierChosen: Supplier? = nil
     @Published var productChosen: Product? = nil
+    @Published var supplierAnalyticsChosen: Supplier? = nil
     @Published var transactionChosen: Transaction? = nil
     
     public enum StackType: Codable, Hashable{
@@ -34,6 +35,8 @@ final class Router: ObservableObject{
         case pointOfSale
         case historicTransaction
         case analyticsTransasction
+        case detailTransaction
+        case supplierAnalytics
     }
     
     public enum BundlingDestination: Codable, Hashable {

@@ -26,9 +26,9 @@ struct CurrentOrderView: View {
             .padding(.horizontal, 12)
             Spacer()
             HStack{
-                Text("Total :").font(.headline).bold()
+                Text("Total :").font(.largeTitle).bold()
                 Spacer()
-                Text("\(order.totalPrice)").font(.headline).bold()
+                Text("\(order.totalPrice)").font(.largeTitle).bold()
             }
             Button(action: payBill, label: {
                 Text("Pay Bill")

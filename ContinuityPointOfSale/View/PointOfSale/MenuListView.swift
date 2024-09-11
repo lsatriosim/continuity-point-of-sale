@@ -41,19 +41,19 @@ struct MenuListView: View {
                         Spacer()
                     }
                 }else{
-                    HStack{
-                        Picker("Categories", selection: $selectedCategory){
-                                            ForEach(categories, id: \.self) { category in
-                                                Text(category)
-                                            }
-                                        }
-                        .pickerStyle(.segmented)
-                        .frame(width: proxy.size.width * (356/834))
-                        .padding(.horizontal,14)
-                        .padding(.top, 8)
-                        
-                        Spacer()
-                    }
+//                    HStack{
+//                        Picker("Categories", selection: $selectedCategory){
+//                                            ForEach(categories, id: \.self) { category in
+//                                                Text(category)
+//                                            }
+//                                        }
+//                        .pickerStyle(.segmented)
+//                        .frame(width: proxy.size.width * (356/834))
+//                        .padding(.horizontal,14)
+//                        .padding(.top, 8)
+//                        
+//                        Spacer()
+//                    }
                     
                     ScrollView{
                         LazyVGrid(columns: [GridItem(.flexible()),

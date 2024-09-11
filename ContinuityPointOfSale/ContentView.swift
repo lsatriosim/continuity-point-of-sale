@@ -95,6 +95,10 @@ struct ContentView: View {
                             TransactionHistoryView()
                         case .analyticsTransasction :
                             AnalyticsView()
+                        case .detailTransaction:
+                            DetailTransaction()
+                        case .supplierAnalytics:
+                            SupplierAnalyticsView()
                         }
                     }
             }

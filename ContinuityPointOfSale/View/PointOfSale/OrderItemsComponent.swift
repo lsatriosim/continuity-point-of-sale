@@ -31,12 +31,8 @@ struct OrderItemsComponent: View {
                     .padding(20)
             }
             VStack(alignment: .leading, spacing: 4){
-                Text("\(orderItem.product.name)").font(.headline).bold().truncationMode(.tail)
-                HStack(alignment: .top){
-                    Text("Rp \(orderItem.product.price)").font(.body)
-                    Text("/ \(orderItem.product.unit)").font(.body)
-                }
-                Text("Rp \(orderItem.product.price * orderItem.quantity)")
+                Text("\(orderItem.product.name)").font(.headline).truncationMode(.tail)
+                Text("Rp \(orderItem.product.price * orderItem.quantity)").font(.title3)
                 HStack{
                     Spacer()
                     Button(action: {
@@ -44,15 +40,15 @@ struct OrderItemsComponent: View {
                             order.subtractProduct(orderItem.product)
                         }
                     }, label: {
-                        Image(systemName: "minus.circle").foregroundStyle(.red)
+                        Image(systemName: "minus.circle").resizable().frame(width: 36,height: 36).foregroundStyle(.red)
                     })
-                    Text("\(orderItem.quantity)")
+                    Text("\(orderItem.quantity)").font(.title)
                     Button(action: {
                         withAnimation{
                             order.addProduct(orderItem.product)
                         }
                     }, label: {
-                        Image(systemName: "plus.circle").foregroundStyle(.green)
+                        Image(systemName: "plus.circle").resizable().frame(width: 36,height: 36).foregroundStyle(.green)
                     })
                 }
             }.foregroundStyle(.black)

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE3798BA2C8F3E3500A57ACA /* DetailOrderHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3798B92C8F3E3500A57ACA /* DetailOrderHistory.swift */; };
+		DE3798BC2C9096FA00A57ACA /* SupplierAnalyticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3798BB2C9096FA00A57ACA /* SupplierAnalyticsView.swift */; };
 		DE7B20002C81BF8D00290179 /* SupplierListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7B1FFF2C81BF8D00290179 /* SupplierListView.swift */; };
 		DE7B20022C81BFB000290179 /* Supplier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7B20012C81BFB000290179 /* Supplier.swift */; };
 		DE7B20052C81C03100290179 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7B20042C81C03100290179 /* Product.swift */; };
@@ -32,6 +34,7 @@
 		DE7B20342C883EA100290179 /* CashFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7B20332C883EA100290179 /* CashFlow.swift */; };
 		DE7B20362C89DEE400290179 /* Seeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7B20352C89DEE400290179 /* Seeder.swift */; };
 		DE7B20382C89E01900290179 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7B20372C89E01900290179 /* Formatter.swift */; };
+		DE7B203A2C8F2FB300290179 /* DetailTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7B20392C8F2FB300290179 /* DetailTransaction.swift */; };
 		DEB5C1332C81AB410096C8E7 /* ContinuityPointOfSaleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB5C1322C81AB410096C8E7 /* ContinuityPointOfSaleApp.swift */; };
 		DEB5C1352C81AB410096C8E7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB5C1342C81AB410096C8E7 /* ContentView.swift */; };
 		DEB5C1372C81AB410096C8E7 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB5C1362C81AB410096C8E7 /* Item.swift */; };
@@ -41,6 +44,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DE3798B92C8F3E3500A57ACA /* DetailOrderHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailOrderHistory.swift; sourceTree = "<group>"; };
+		DE3798BB2C9096FA00A57ACA /* SupplierAnalyticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplierAnalyticsView.swift; sourceTree = "<group>"; };
 		DE7B1FFF2C81BF8D00290179 /* SupplierListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplierListView.swift; sourceTree = "<group>"; };
 		DE7B20012C81BFB000290179 /* Supplier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Supplier.swift; sourceTree = "<group>"; };
 		DE7B20042C81C03100290179 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
@@ -66,6 +71,7 @@
 		DE7B20332C883EA100290179 /* CashFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashFlow.swift; sourceTree = "<group>"; };
 		DE7B20352C89DEE400290179 /* Seeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seeder.swift; sourceTree = "<group>"; };
 		DE7B20372C89E01900290179 /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
+		DE7B20392C8F2FB300290179 /* DetailTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTransaction.swift; sourceTree = "<group>"; };
 		DEB5C12F2C81AB410096C8E7 /* ContinuityPointOfSale.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContinuityPointOfSale.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEB5C1322C81AB410096C8E7 /* ContinuityPointOfSaleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinuityPointOfSaleApp.swift; sourceTree = "<group>"; };
 		DEB5C1342C81AB410096C8E7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -151,6 +157,8 @@
 			isa = PBXGroup;
 			children = (
 				DE7B20252C869D0300290179 /* TransactionHistoryView.swift */,
+				DE7B20392C8F2FB300290179 /* DetailTransaction.swift */,
+				DE3798B92C8F3E3500A57ACA /* DetailOrderHistory.swift */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -169,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				DE7B202F2C8756BB00290179 /* AnalyticsView.swift */,
+				DE3798BB2C9096FA00A57ACA /* SupplierAnalyticsView.swift */,
 			);
 			path = Analytics;
 			sourceTree = "<group>";
@@ -295,10 +304,13 @@
 				DE7B20262C869D0300290179 /* TransactionHistoryView.swift in Sources */,
 				DE7B20382C89E01900290179 /* Formatter.swift in Sources */,
 				DE7B20362C89DEE400290179 /* Seeder.swift in Sources */,
+				DE3798BC2C9096FA00A57ACA /* SupplierAnalyticsView.swift in Sources */,
+				DE3798BA2C8F3E3500A57ACA /* DetailOrderHistory.swift in Sources */,
 				DE7B20192C8594E900290179 /* MenuListView.swift in Sources */,
 				DE7B20212C85F9B500290179 /* CurrentOrderView.swift in Sources */,
 				DEB5C1352C81AB410096C8E7 /* ContentView.swift in Sources */,
 				DE7B20342C883EA100290179 /* CashFlow.swift in Sources */,
+				DE7B203A2C8F2FB300290179 /* DetailTransaction.swift in Sources */,
 				DE7B20302C8756BB00290179 /* AnalyticsView.swift in Sources */,
 				DEB5C1372C81AB410096C8E7 /* Item.swift in Sources */,
 				DE7B20102C8224BA00290179 /* ProductCardComponent.swift in Sources */,
