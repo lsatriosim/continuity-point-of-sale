@@ -67,17 +67,6 @@ struct SupplierAnalyticsView: View {
                                     .foregroundColor(.black) // Set the color to black
                                 Spacer()
                                 HStack(alignment: .center){
-                                    //                                    VStack(alignment: .leading){
-                                    //                                        Spacer()
-                                    //                                        ForEach(router.transactionChosen?.cashFlows ?? [CashFlow](), id: \.id){(cashFlow: CashFlow) in
-                                    //                                            if(cashFlow.walletName == "coupon"){
-                                    //                                                Text("\(cashFlow.walletName) - \(cashFlow.cashValue / 3000) -\(cashFlow.cashValue)")
-                                    //                                            }else{
-                                    //                                                Text("\(cashFlow.walletName) - \(cashFlow.cashValue)")
-                                    //                                            }
-                                    //                                        }
-                                    //                                        Spacer()
-                                    //                                    }
                                     Spacer()
                                     VStack(alignment: .trailing){
                                         Text("\(router.supplierAnalyticsChosen?.totalRevenue(orderItems: orderItems) ?? 0)").font(.title).bold()
