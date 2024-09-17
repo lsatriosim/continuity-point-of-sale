@@ -10,7 +10,7 @@ import SwiftData
 
 struct ProductListView: View {
     @State private var searchText: String = ""
-    @Query private var productFromSwiftData: [Product]
+    @Query(sort: [SortDescriptor(\Product.name, order: .forward)]) private var productFromSwiftData: [Product]
     @State private var addModalPresented : Bool = false
     @EnvironmentObject var router: Router
     

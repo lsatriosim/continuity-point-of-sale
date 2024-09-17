@@ -12,7 +12,7 @@ private enum SidebarItem: String, CaseIterable, Identifiable {
     case pointOfSale = "Point Of Sale"
     case supplier = "Supplier"
     case product = "Product"
-    case bundling = "Bundling"
+//    case bundling = "Bundling"
     
     var id: String { self.rawValue }
 }
@@ -22,7 +22,7 @@ private func iconForItem(_ item: SidebarItem) -> String {
     case .supplier: "person.fill"
     case .product: "takeoutbag.and.cup.and.straw.fill"
     case .pointOfSale: "cart.fill"
-    case .bundling: "bag.fill"
+//    case .bundling: "bag.fill"
     }
 }
 
@@ -103,16 +103,16 @@ struct ContentView: View {
                     }
             }
             
-        case .bundling:
-            NavigationStack(path: $router.bundlingPath){
-                Text("Bundling Page")
-                    .navigationDestination(for: Router.BundlingDestination.self){ destination in
-                        switch destination{
-                        case .bundling :
-                            Text("Bundling Page")
-                        }
-                    }
-            }
+//        case .bundling:
+//            NavigationStack(path: $router.bundlingPath){
+//                Text("Bundling Page")
+//                    .navigationDestination(for: Router.BundlingDestination.self){ destination in
+//                        switch destination{
+//                        case .bundling :
+//                            Text("Bundling Page")
+//                        }
+//                    }
+//            }
         case .none:
             Text("None")
         }

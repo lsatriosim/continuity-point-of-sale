@@ -11,7 +11,7 @@ import SwiftData
 struct MenuListView: View {
     var proxy: GeometryProxy
     @Binding var searchText : String
-    @Query var product: [Product]
+    @Query(sort: [SortDescriptor(\Product.name, order: .forward)]) var product: [Product]
     var categories : [String] = ["All", "Food", "Desert", "Snack", "Beverages"]
     @State private var selectedCategory : String = "All"
     @EnvironmentObject var order: Order

@@ -9,7 +9,7 @@ import SwiftUI
 import SwiftData
 
 struct TransactionHistoryView: View {
-    @Query var transactions : [Transaction]
+    @Query(sort: [SortDescriptor(\Transaction.timeStamp, order: .reverse)]) var transactions : [Transaction]
     @EnvironmentObject var router: Router
     @Environment(\.modelContext) var modelContext: ModelContext
     @State var searchKeyword: String = ""

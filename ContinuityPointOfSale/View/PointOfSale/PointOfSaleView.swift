@@ -86,7 +86,7 @@ struct PointOfSaleView: View {
                         if(useCoupon){
                             HStack(alignment: .center){
                                 Image("coupon").resizable().frame(width: 80, height: 80).aspectRatio(contentMode: .fill)
-                                Stepper("", value: $couponAmount, in: 1...100)
+                                Stepper("", value: $couponAmount, in: 1...(order.totalPrice / 30000))
                                     .onChange(of: couponAmount){oldValue, newValue in
                                         cashFlows.first?.cashValue = newValue * 30000
                                         updateUndistributedBalance()
@@ -170,7 +170,7 @@ struct PointOfSaleView: View {
                     ToolbarItem(placement: .topBarTrailing){
                         Button(action: makeOrder, label: {
                             Text("Done")
-                        }).disabled(undistributedBalance != 0)
+                        }).disabled(undistributedBalance != 0 || customerName == "")
                     }
                     ToolbarItem(placement: .topBarLeading) {
                         Button("Cancel") {

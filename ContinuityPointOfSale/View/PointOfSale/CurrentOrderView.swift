@@ -41,7 +41,7 @@ struct CurrentOrderView: View {
                     .padding()
             })
             .disabled(order.items.count == 0)
-        }
+        }.padding()
     }
 }
 
