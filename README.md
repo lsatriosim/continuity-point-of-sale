@@ -1,5 +1,5 @@
 
-# ** Bazaar POS Application**
+# **Bazaar POS Application**
 
 A custom-built Point of Sale (POS) application designed to streamline sales for multiple vendors during the UC Day Bazaar. The app efficiently manages multiple suppliers, calculates revenue in real-time, and tracks payments. It includes intuitive features like auto-payment calculation, a custom virtual keyboard for iPad, and CSV export for transaction data.
 
